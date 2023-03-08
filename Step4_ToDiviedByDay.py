@@ -1,8 +1,9 @@
-#Defining (back to (Excel_CO2019) file for more details
+#Importing libraries
 import openpyxl
 import os
 from openpyxl.utils import get_column_letter
-os.chdir("C:\\Users\\mmnnm\\Desktop\\PY_Master")
+
+os.chdir("C:\\Users\\MohammedAlmotawa\\Desktop\\LUR")
 
 #Open a file in py and import CO data without the NULL DATA 
 
@@ -17,21 +18,6 @@ NEws = NE.active
 NEws.title = 'CO2019'
 #Headings
 NEws.append([ sheet ['A6'].value , sheet ['B4'].value , sheet ['C4'].value , sheet ['D4'].value , sheet ['E4'].value , sheet ['F4'].value , sheet ['G4'].value , sheet ['H4'].value , sheet ['I4'].value , sheet ['J4'].value ])
-
-
-#["%.2d" % day for day in range(1,24)]
-
-##x = NEws['A7'].value
-##Day1 = NE.create_sheet ('Day1')
-##Day2 = NE.create_sheet ('Day2')
-##for row in range (7,50):
-##    char = get_column_letter (1)
-##    cell = char + str (row)
-##    x = str(sheet[cell].value)
-##    if x.startswith("'2019-01-01") or x.startswith ("'01/01/2019"):
-##        Day1 [cell] = x
-##    else:
-##        Day2[cell] = x
 
 
 ListDay = ["%.2d" % i for i in range(32)] #List ['01','02',...]
@@ -57,7 +43,6 @@ for row in range (9,50):
                 continue
         
         
-
 NE.save ('DividedByDay.xlsx')
 
 
