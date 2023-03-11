@@ -1,4 +1,4 @@
-#Defining (back to (Excel_CO2019) file for more details
+
 import openpyxl
 
 #Open a file in py and import CO data without the NULL DATA 
