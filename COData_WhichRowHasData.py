@@ -1,8 +1,8 @@
-#Defining (back to (Excel_CO2019) file for more details
+#Defining (back to (CO2019) file for more details
 import openpyxl
 import os
 from openpyxl.utils import get_column_letter
-os.chdir("C:\\Users\\mmnnm\\Desktop\\PY_Master")
+os.chdir("C:\\Users\\mohammedalmotawa\\Desktop\\PY_Master")
 
 #Open a file in py and import CO data without the NULL DATA 
 
@@ -21,7 +21,7 @@ NEws.append([ sheet ['A6'].value , sheet ['B4'].value , sheet ['C4'].value , she
 
 
         
-#Move the rows that have all a real measurment of the CO concentration (without NULL values)
+#Moving the rows that have all a real measurement of the CO concentration (without NULL values)
 for row in range (7,50):
     for col in range (2, 11): #start from B
         char = get_column_letter(col)
@@ -66,9 +66,7 @@ for row in range (7,50):
         
         
 
-            
-
-
+           
 
 NE.save ('DataWithoutNULL.xlsx')
 
