@@ -1,9 +1,9 @@
-#Defining (back to (Excel_CO2019) file for more details
+
 import openpyxl
 from openpyxl.utils import get_column_letter
 
-#Load the original sheet's data 
-workbook = openpyxl.load_workbook('CO_Step3_DeletedEmptyRows.xlsx')
+#Loading the original sheet's data 
+workbook = openpyxl.load_workbook('X.xlsx')
 sheet = workbook['CO2019']
 #NE: new excel
 NE = openpyxl.Workbook()
@@ -18,14 +18,14 @@ for M in range (1,13):
     NE.create_sheet(str(M))
     
 
-#Add the same Headings as the original file for each sheeat
+#Adding the same Headings as the original file for each sheeat
 for m in range(1,13):
     SW1 = NE.active
     SW1 = NE[str(m)]
     SW1.append([ sheet ['A1'].value , sheet ['B1'].value , sheet ['C1'].value , sheet ['D1'].value , sheet ['E1'].value , sheet ['F1'].value , sheet ['G1'].value , sheet ['H1'].value , sheet ['I1'].value , sheet ['J1'].value ])
 
 
-#Move every measurment based on the measurment month
+#Moving every measurement based on the measurement month
 for row in range (2,4172): #8766
     for m in range(12):
         for d in range (31):
@@ -41,11 +41,11 @@ for row in range (2,4172): #8766
             else:
                 continue
         
-#Delete the first sheet
+#Deleting the first sheet
 del NE['Sheet']
 
-#Save the file        
-NE.save ('CO_DividedByMonth.xlsx')
+#Saving the file        
+NE.save ('COData_DividedByMonth.xlsx')
 
 
 
