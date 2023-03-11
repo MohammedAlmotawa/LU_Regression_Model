@@ -1,8 +1,8 @@
-#Defining (back to (Excel_CO2019) file for more details
+#Defining (back to (CO2019) file for more details
 import openpyxl
 
 
-#Open a file in py and create different files for each group of values
+#Opening a file in py and creating different files for each group of values
 #NULL, 1>,<1,>2)
 #The source Data
 workbook = openpyxl.load_workbook('CO2019.xlsx')
@@ -15,7 +15,7 @@ sheet2 = NE.create_sheet('Less Than one')
 sheet3 = NE.create_sheet('More Than one')
 sheet4 = NE.create_sheet('More than two')
 
-#Write the firs row with the same name as the original file
+#Writing the firs row with the same name as the original file
 #First sheet
 sheet1 = NE.active
 sheet1 = NE['NULL']
@@ -308,16 +308,15 @@ for i in range (2, 8759):
                 sheet4['R'+str(x)] = Station9
                 break
 
-#Delete the first sheet
+#Deleting the first sheet
 del NE['Sheet']
 
-#Save the file
-NE.save('CO_DividAllTheStationsValuesIntoFourCatagories.xlsx')
-
+#Saving the file
+NE.save('COData_FourCategories.xlsx')
 
 
 #iF THE DATE = THE OTHER DATES THEN THE DATA FOR THAT PERIOD ARE GOOD TO USE
-#DELETE THE OTHER DATA THE HAVE NULL 
+
 
 
 
