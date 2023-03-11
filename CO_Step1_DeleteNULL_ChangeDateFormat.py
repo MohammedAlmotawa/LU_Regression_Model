@@ -1,4 +1,3 @@
-#Defining (back to (Excel_CO2019) file for more details
 import openpyxl
 from openpyxl.utils import get_column_letter
 
@@ -17,12 +16,12 @@ NEws.title = 'CO2019'
 NEws.append([ sheet ['A1'].value , sheet ['B1'].value , sheet ['C1'].value , sheet ['D1'].value , sheet ['E1'].value , sheet ['F1'].value , sheet ['G1'].value , sheet ['H1'].value , sheet ['I1'].value , sheet ['J1'].value ])
 
 
-#Add the date
+#Adding the date
 for row in range (2,8759):
         cell = 'A' + str (row)
         NEws[cell]= '\''+str(sheet[cell].value)
         
-#Move the rows that have all a real measurment of the CO concentration (without NULL values)
+#Moving rows that have all real measurmenst of the CO concentration (without NULL values)
 for row in range (2,8759):
     for col in range (2, 11): #start from B
         char = get_column_letter(col)
@@ -37,7 +36,7 @@ for row in range (2,8759):
 
 
    
-#Delete empty rows
+#Deleting empty rows
 for row in range (2,8759):
     cell = 'J' + str (row)
     cellvalue = NEws[cell].value
